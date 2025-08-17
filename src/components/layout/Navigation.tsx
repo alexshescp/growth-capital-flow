@@ -23,7 +23,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="font-heading font-bold text-xl text-primary">
-            FlowCapital
+            u2c
           </Link>
 
           {/* Desktop Navigation */}

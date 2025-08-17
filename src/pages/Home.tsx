@@ -119,7 +119,7 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center space-y-4 mb-16">
             <h2 className="font-heading font-bold text-3xl lg:text-4xl text-foreground">
-              Why subscription businesses choose FlowCapital
+              Why subscription businesses choose u2c
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Transform your predictable revenue into immediate growth opportunities
@@ -154,7 +154,7 @@ const Home = () => {
               Ready to unlock your growth capital?
             </h2>
             <p className="text-lg opacity-90">
-              Join hundreds of subscription businesses that have accelerated their growth with FlowCapital. 
+              Join hundreds of subscription businesses that have accelerated their growth with u2c. 
               Get approved in minutes, not weeks.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -340,7 +340,7 @@ const Apply = () => {
                     onCheckedChange={(checked) => setFormData({...formData, consent: !!checked})}
                   />
                   <Label htmlFor="consent" className="text-sm leading-relaxed">
-                    I agree to the Terms & Privacy Policy and consent to FlowCapital processing my data 
+                    I agree to the Terms & Privacy Policy and consent to u2c processing my data 
                     for the purpose of evaluating my funding application. I understand that covenant rules 
                     may apply and temporary NDA read-only access to my admin panel may be requested.
                   </Label>

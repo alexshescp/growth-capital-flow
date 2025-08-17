@@ -69,7 +69,7 @@ const HowItWorks = () => {
         {/* Header */}
         <div className="text-center space-y-6 mb-20">
           <h1 className="font-heading font-bold text-4xl lg:text-5xl text-foreground">
-            How FlowCapital Works
+            How u2c Works
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             A simple 4-step process to transform your subscription revenue into immediate growth capital
