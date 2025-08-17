@@ -2,41 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Digital Factoring Platform Design System - All colors MUST be HSL */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors */
+    --background: 35 100% 98%;
+    --foreground: 225 15% 20%;
 
+    /* Card system */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 225 15% 20%;
 
+    /* Popover system */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 225 15% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Deep fintech blue */
+    --primary: 225 60% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 225 60% 35%;
+    --primary-lighter: 225 60% 85%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Warm accent */
+    --secondary: 260 30% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 260 30% 90%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted system */
+    --muted: 220 10% 96%;
+    --muted-foreground: 225 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Conversion orange */
+    --accent: 25 95% 60%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 25 95% 55%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Status colors */
+    --success: 140 60% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 95% 55%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* UI elements */
+    --border: 220 15% 88%;
+    --input: 220 15% 94%;
+    --ring: 225 60% 25%;
 
-    --radius: 0.5rem;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(225 60% 25%), hsl(260 30% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(225 100% 96%), hsl(260 50% 94%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 20% 98%));
+    --gradient-accent: linear-gradient(135deg, hsl(25 95% 60%), hsl(35 90% 65%));
+
+    /* Shadows */
+    --shadow-card: 0 4px 20px -4px hsl(225 60% 25% / 0.1);
+    --shadow-elevated: 0 8px 40px -8px hsl(225 60% 25% / 0.15);
+    --shadow-hero: 0 20px 60px -20px hsl(225 60% 25% / 0.2);
+
+    /* Typography scale */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+
+    /* Spacing scale */
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
