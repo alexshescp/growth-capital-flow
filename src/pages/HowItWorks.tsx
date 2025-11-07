@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { EnhancedButton } from "@/components/ui/enhanced-button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, BarChart3, DollarSign, Repeat, Shield } from "lucide-react";
+import { ArrowRight, BarChart3, DollarSign, Repeat, Shield, ClipboardList, Sparkles } from "lucide-react";
 
 const HowItWorks = () => {
   const steps = [
@@ -9,58 +9,80 @@ const HowItWorks = () => {
       number: "01",
       icon: BarChart3,
       title: "Share Your Metrics",
-      description: "Provide your active subscriber count, ARPU, and 12-24 months of subscription history. We analyze your churn rate and customer acquisition patterns.",
+      description:
+        "Provide your active subscriber count, ARPU, and 12-24 months of subscription history. We analyse your churn rate and customer acquisition patterns.",
       details: [
         "Active subscriber count",
         "Average revenue per user (ARPU)",
         "12-24 months subscription history",
-        "Historical churn analysis"
-      ]
+        "Historical churn analysis",
+      ],
     },
     {
-      number: "02", 
+      number: "02",
       icon: DollarSign,
       title: "We Prepay Your Revenue",
-      description: "Based on your metrics, we provide 6-12 months of subscriber revenue upfront. For example: €120 ARPU × 1,000 users = €120,000 immediate capital.",
+      description:
+        "Based on your metrics, we provide 6-12 months of subscriber revenue upfront. For example: €120 ARPU × 1,000 users = €120,000 immediate capital.",
       details: [
         "6-12 months revenue advance",
         "Calculated per active subscriber",
         "Immediate capital transfer",
-        "No equity dilution required"
-      ]
+        "No equity dilution required",
+      ],
     },
     {
       number: "03",
       icon: Repeat,
       title: "Bank Routes Payments",
-      description: "Your bank routes monthly subscription payments to us for 14 months through a simple covenant arrangement. Your customers experience no changes.",
+      description:
+        "Your bank routes monthly subscription payments to us for 14 months through a simple covenant arrangement. Your customers experience no changes.",
       details: [
         "14-month payment routing",
         "Bank-facilitated transfers",
         "No customer experience changes",
-        "Automatic payment processing"
-      ]
+        "Automatic payment processing",
+      ],
     },
     {
       number: "04",
       icon: Shield,
       title: "We Handle Operations",
-      description: "We manage churn impacts (typically 2%) with recovery efforts (typically 50%) and handle all collection operations, so you can focus on growth.",
+      description:
+        "We manage churn impacts (typically 2%) with recovery efforts (typically 50%) and handle all collection operations, so you can focus on growth.",
       details: [
         "Churn impact management",
         "Recovery operations (≈50%)",
         "Collection handling",
-        "Operational cost coverage (≈2%)"
-      ]
-    }
+        "Operational cost coverage (≈2%)",
+      ],
+    },
   ];
 
   const assumptions = [
     "12-24 months of stable subscription history",
-    "Predictable churn rates below industry averages", 
+    "Predictable churn rates below industry averages",
     "Reliable payment processing infrastructure",
     "Compliance with banking and financial regulations",
-    "Geographic coverage in supported jurisdictions"
+    "Geographic coverage in supported jurisdictions",
+  ];
+
+  const riskControls = [
+    {
+      title: "Eligibility checklist",
+      description: "Data coverage, payment processor health, and consolidated financial statements verified upfront.",
+      icon: ClipboardList,
+    },
+    {
+      title: "Ongoing monitoring",
+      description: "Automated triggers monitor net revenue retention, churn, and cash reconciliation every week.",
+      icon: Shield,
+    },
+    {
+      title: "Portfolio optimisation",
+      description: "Retention specialists provide best practices to improve recovery and extend covenant headroom.",
+      icon: Sparkles,
+    },
   ];
 
   return (
@@ -79,28 +101,22 @@ const HowItWorks = () => {
         {/* Steps */}
         <div className="space-y-16 mb-20">
           {steps.map((step, index) => (
-            <div key={index} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className={`space-y-6 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+            <div key={step.number} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className={`space-y-6 ${index % 2 === 1 ? "lg:order-2" : ""}`}>
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 bg-gradient-accent rounded-xl flex items-center justify-center">
                     <step.icon className="w-8 h-8 text-accent-foreground" />
                   </div>
-                  <div className="text-6xl font-heading font-bold text-primary/20">
-                    {step.number}
-                  </div>
+                  <div className="text-6xl font-heading font-bold text-primary/20">{step.number}</div>
                 </div>
-                
-                <h2 className="font-heading font-bold text-2xl lg:text-3xl text-foreground">
-                  {step.title}
-                </h2>
-                
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  {step.description}
-                </p>
+
+                <h2 className="font-heading font-bold text-2xl lg:text-3xl text-foreground">{step.title}</h2>
+
+                <p className="text-lg text-muted-foreground leading-relaxed">{step.description}</p>
 
                 <ul className="space-y-2">
-                  {step.details.map((detail, detailIndex) => (
-                    <li key={detailIndex} className="flex items-center gap-3">
+                  {step.details.map((detail) => (
+                    <li key={detail} className="flex items-center gap-3">
                       <div className="w-2 h-2 bg-accent rounded-full" />
                       <span className="text-foreground">{detail}</span>
                     </li>
@@ -108,7 +124,7 @@ const HowItWorks = () => {
                 </ul>
               </div>
 
-              <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+              <div className={`${index % 2 === 1 ? "lg:order-1" : ""}`}>
                 <Card className="p-8 bg-gradient-card border-0 shadow-elevated">
                   <div className="aspect-video bg-gradient-hero rounded-lg flex items-center justify-center">
                     <step.icon className="w-16 h-16 text-primary/40" />
@@ -129,8 +145,8 @@ const HowItWorks = () => {
               Our underwriting process focuses on these key factors to ensure a successful partnership:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {assumptions.map((assumption, index) => (
-                <div key={index} className="flex items-start gap-3">
+              {assumptions.map((assumption) => (
+                <div key={assumption} className="flex items-start gap-3">
                   <Shield className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                   <span className="text-foreground">{assumption}</span>
                 </div>
@@ -138,6 +154,21 @@ const HowItWorks = () => {
             </div>
           </div>
         </Card>
+
+        {/* Risk controls */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          {riskControls.map((control) => (
+            <Card key={control.title} className="p-6 bg-background border border-border/60 shadow-sm">
+              <div className="space-y-3">
+                <div className="w-10 h-10 bg-primary-lighter rounded-lg flex items-center justify-center">
+                  <control.icon className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="font-heading text-lg font-semibold text-foreground">{control.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{control.description}</p>
+              </div>
+            </Card>
+          ))}
+        </div>
 
         {/* CTA Section */}
         <div className="text-center space-y-8">
