@@ -1,73 +1,82 @@
-# Welcome to your Lovable project
+# Growth Capital Flow
 
-## Project info
+Growth Capital Flow is a React + Vite single page application that demonstrates how subscription businesses can convert their
+recurring revenue into upfront growth capital. The experience includes a detailed funding calculator, underwriting education,
+and an application workflow tailored for finance teams.
 
-**URL**: https://lovable.dev/projects/267c2d52-ff12-452e-89a0-90b9e38d2a5c
+## Highlights
 
-## How can I edit this code?
+- **Funding simulator** – model churn, recovery, and advance scenarios with break-even insights and sensitivity analysis.
+- **Go-to-market storytelling** – showcase strategic use cases, operating principles, and risk controls for non-dilutive
+  financing.
+- **Application readiness** – capture the data points lenders need through a structured intake form and guidance cards.
 
-There are several ways of editing your application.
+## Tech stack
 
-**Use Lovable**
+- [React 18](https://react.dev/) with TypeScript for a type-safe component architecture.
+- [Vite](https://vitejs.dev/) for ultra-fast development and production builds.
+- [Tailwind CSS](https://tailwindcss.com/) and [shadcn/ui](https://ui.shadcn.com/) for composable, accessible UI primitives.
+- [TanStack Query](https://tanstack.com/query/latest) prepared for future data fetching enhancements.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/267c2d52-ff12-452e-89a0-90b9e38d2a5c) and start prompting.
+## Getting started
 
-Changes made via Lovable will be committed automatically to this repo.
+1. **Install dependencies**
+   ```bash
+   npm install
+   ```
+2. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+3. **Build for production**
+   ```bash
+   npm run build
+   ```
+4. **Preview the production build**
+   ```bash
+   npm run preview
+   ```
 
-**Use your preferred IDE**
+The project targets modern evergreen browsers. Node.js 18+ is recommended for local development.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Project structure
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+  assets/                # Static images and illustrations
+  components/
+    calculator/          # Reusable calculator-specific UI blocks
+    layout/              # Navigation, footer, and shared layout elements
+    ui/                  # shadcn/ui primitives
+  hooks/                 # Custom React hooks for shared logic
+  lib/                   # Domain utilities such as calculator math helpers
+  pages/                 # Top-level route views (Home, Calculator, Apply, etc.)
 ```
 
-**Edit a file directly in GitHub**
+Key architectural practices:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **Composable domain logic** – complex calculator logic lives in `src/lib/calculator.ts`, enabling reuse in hooks, tests, or
+  future APIs.
+- **Stateful hooks** – UI state is abstracted by `src/hooks/use-funding-calculator.ts` to keep React components declarative.
+- **Presentational components** – cards, tables, and grids in `src/components/calculator/` encapsulate layout concerns.
 
-**Use GitHub Codespaces**
+## Code style & quality
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- The repository ships with [ESLint](https://eslint.org/) configured for React and TypeScript. Run `npm run lint` before
+  opening pull requests.
+- Tailwind utility classes are organised for readability; multi-line attributes are preferred when class strings grow long.
+- Components include descriptive comments to document intent and aid future contributors.
+- Avoid side-effectful logic in components; move calculations into hooks or `lib/` helpers for easier testing.
 
-## What technologies are used for this project?
+## Testing ideas
 
-This project is built with:
+Automated tests are not included yet, but the modular architecture makes it straightforward to add:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- Unit tests for `src/lib/calculator.ts` using [Vitest](https://vitest.dev/) to validate funding scenarios.
+- Component tests for key UI flows with [Testing Library](https://testing-library.com/docs/react-testing-library/intro/).
+- End-to-end flows with [Playwright](https://playwright.dev/) once backend integrations exist.
 
-## How can I deploy this project?
+## Deployment notes
 
-Simply open [Lovable](https://lovable.dev/projects/267c2d52-ff12-452e-89a0-90b9e38d2a5c) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+The app produces a static build with `npm run build`. Host the generated `dist/` directory on any modern static hosting
+platform (Netlify, Vercel, Render, etc.). Configure HTTPS and caching headers according to your platform’s best practices.
